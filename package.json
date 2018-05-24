@@ -1,0 +1,19 @@
+{
+  "name": "LaborCrypto Token",
+  "version": "1.0.0",
+  "description": "LaborCrypto is a solution that we created when we were building the ChoreRelief TM marketplace. We had identified problems within the existing freelance models. We took a value-driven approach to create a marketplace that empowers consumers and freelancers.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "openzeppelin-solidity": "1.9.0",
+    "truffle-hdwallet-provider": "0.0.5"
+  }
+}
