@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity 0.4.23;
 
 
 import "./ERC20Basic.sol";
@@ -12,9 +12,9 @@ import "./SafeMath.sol";
 contract BasicToken is ERC20Basic {
   using SafeMath for uint256;
 
-  mapping(address => uint256) balances;
+  mapping(address => uint256) internal balances;
 
-  uint256 totalSupply_;
+  uint256 internal totalSupply_;
 
   /**
   * @dev total number of tokens in existence
@@ -30,6 +30,7 @@ contract BasicToken is ERC20Basic {
   */
   function transfer(address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
+    require(_to != address(this));
     require(_value <= balances[msg.sender]);
 
     balances[msg.sender] = balances[msg.sender].sub(_value);
