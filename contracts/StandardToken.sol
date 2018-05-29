@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity 0.4.23;
 
 import "./BasicToken.sol";
 import "./ERC20.sol";
@@ -15,7 +15,6 @@ contract StandardToken is ERC20, BasicToken {
 
   mapping (address => mapping (address => uint256)) internal allowed;
 
-
   /**
    * @dev Transfer tokens from one address to another
    * @param _from address The address which you want to send tokens from
@@ -24,6 +23,7 @@ contract StandardToken is ERC20, BasicToken {
    */
   function transferFrom(address _from, address _to, uint256 _value) public returns (bool) {
     require(_to != address(0));
+    require(_to != address(this));
     require(_value <= balances[_from]);
     require(_value <= allowed[_from][msg.sender]);
 
@@ -96,5 +96,4 @@ contract StandardToken is ERC20, BasicToken {
     emit Approval(msg.sender, _spender, allowed[msg.sender][_spender]);
     return true;
   }
-
 }
