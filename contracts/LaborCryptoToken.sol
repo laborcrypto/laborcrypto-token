@@ -4,7 +4,7 @@ import "./PausableToken.sol";
 
 contract LaborCryptoToken is PausableToken {
 
-  string public constant name = "LaborCryptoToken";
+  string public constant name = "Laborcrypto";
   string public constant symbol = "LBR";
   uint8 public constant decimals = 18;
 
